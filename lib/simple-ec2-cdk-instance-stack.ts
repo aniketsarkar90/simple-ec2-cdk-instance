@@ -2,6 +2,7 @@ import * as cdk from '@aws-cdk/core';
 
 import * as ec2 from '@aws-cdk/aws-ec2';
 import * as iam from '@aws-cdk/aws-iam';
+import {readFileSync} from 'fs';
 
 export class SimpleEc2CdkInstanceStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -73,5 +74,11 @@ export class SimpleEc2CdkInstanceStack extends cdk.Stack {
       }),
       keyName: 'MyTestKeyPair',
     });
+
+     // load contents of script
+     const userDataScript = readFileSync('./lib/user-data.sh', 'utf8'); //script installs and starts nginx and writes a simple "It worked" heading tag to the root of our web server.
+     
+     // add the User Data script to the Instance
+     ec2Instance.addUserData(userDataScript);
   }
 }
