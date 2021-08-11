@@ -4,6 +4,7 @@
 * a VPC, in which we will launch our EC2 instance
 * a security group for the instance
 * a role for the instance
+* actual ec2 instance 
 
 # Welcome to your CDK TypeScript project!
 
