@@ -1,3 +1,10 @@
+# Creating an EC2 Instance in AWS CDK
+
+## In order to create an EC2 instance in AWS CDK, we have to create 
+* a VPC, in which we will launch our EC2 instance
+* a security group for the instance
+* a role for the instance
+
 # Welcome to your CDK TypeScript project!
 
 This is a blank project for TypeScript development with CDK.
